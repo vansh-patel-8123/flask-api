@@ -25,26 +25,84 @@ total_revenues_dict = {
         {"year": 2020, "revenue": 110855000000},
         {"year": 2019, "revenue": 90119000000},
     ],
-    # Add more companies with year and revenue data here
+    "AMZN": [
+        {"year": 2023, "revenue": 56789000000},
+        {"year": 2022, "revenue": 38622000000},
+        {"year": 2021, "revenue": 38622000000},
+        {"year": 2020, "revenue": 38622000000},
+        {"year": 2019, "revenue": 38622000000},
+    ],
+    "MSFT": [
+        {"year": 2023, "revenue": 200000000000},
+        {"year": 2022, "revenue": 169559000000},
+        {"year": 2021, "revenue": 169559000000},
+        {"year": 2020, "revenue": 169559000000},
+        {"year": 2019, "revenue": 169559000000},
+    ],
+    "FB": [
+        {"year": 2023, "revenue": 12345000000},
+        {"year": 2022, "revenue": 9876000000},
+        {"year": 2021, "revenue": 8765000000},
+        {"year": 2020, "revenue": 7654000000},
+        {"year": 2019, "revenue": 6543000000},
+    ],
+    "NFLX": [
+        {"year": 2023, "revenue": 30000000000},
+        {"year": 2022, "revenue": 27000000000},
+        {"year": 2021, "revenue": 24000000000},
+        {"year": 2020, "revenue": 21000000000},
+        {"year": 2019, "revenue": 18000000000},
+    ],
+    "NVDA": [
+        {"year": 2023, "revenue": 21000000000},
+        {"year": 2022, "revenue": 18000000000},
+        {"year": 2021, "revenue": 15000000000},
+        {"year": 2020, "revenue": 12000000000},
+        {"year": 2019, "revenue": 9000000000},
+    ],
+    "GOOG": [
+        {"year": 2023, "revenue": 200000000000},
+        {"year": 2022, "revenue": 180000000000},
+        {"year": 2021, "revenue": 160000000000},
+        {"year": 2020, "revenue": 140000000000},
+        {"year": 2019, "revenue": 120000000000},
+    ],
+    "IBM": [
+        {"year": 2023, "revenue": 56000000000},
+        {"year": 2022, "revenue": 54000000000},
+        {"year": 2021, "revenue": 52000000000},
+        {"year": 2020, "revenue": 50000000000},
+        {"year": 2019, "revenue": 48000000000},
+    ],
 }
 
-# Dictionary mapping ticker symbols to their stock info
+
 stock_info_dict = {
     "AAPL": {"eps": 4.51, "pe_ratio": 32.55, "priceToBook": 10.68},
     "TSLA": {"eps": 0.01, "pe_ratio": 123.45, "priceToBook": 56.78},
     "GOOGL": {"eps": 29.73, "pe_ratio": 28.12, "priceToBook": 6.54},
-    # Add more stock info data as needed for additional companies
+    "AMZN": {"eps": 40.56, "pe_ratio": 64.78, "priceToBook": 9.43},
+    "MSFT": {"eps": 5.32, "pe_ratio": 31.47, "priceToBook": 13.62},
+    "FB": {"eps": 3.45, "pe_ratio": 25.67, "priceToBook": 8.91},
+    "NFLX": {"eps": 2.34, "pe_ratio": 45.89, "priceToBook": 11.76},
+    "NVDA": {"eps": 3.67, "pe_ratio": 56.78, "priceToBook": 14.32},
+    "GOOG": {"eps": 7.89, "pe_ratio": 31.23, "priceToBook": 7.45},
+    "IBM": {"eps": 4.56, "pe_ratio": 20.34, "priceToBook": 5.67},
 }
 
-# Dictionary mapping ticker symbols to their latest stock price (realistic hardcoded values)
 latest_stock_price_dict = {
     "AAPL": 150.0,
     "TSLA": 750.0,
     "GOOGL": 2800.0,
-    # Add more latest stock prices here
+    "AMZN": 3500.0,
+    "MSFT": 300.0,
+    "FB": 350.0,
+    "NFLX": 600.0,
+    "NVDA": 250.0,
+    "GOOG": 2750.0,
+    "IBM": 140.0,
 }
 
-# Realistic hardcoded values for stock price (10 data points)
 stock_price_dict = {
     "AAPL": [
         {"Date": "2023-09-20", "Open": 150.0},
@@ -70,8 +128,104 @@ stock_price_dict = {
         {"Date": "2023-09-30", "Open": 765.0},
         {"Date": "2023-10-01", "Open": 766.0},
     ],
-    # Add more stock price data for other companies here
+    "GOOGL": [
+        {"Date": "2023-09-20", "Open": 2800.0},
+        {"Date": "2023-09-21", "Open": 2805.0},
+        {"Date": "2023-09-22", "Open": 2810.0},
+        {"Date": "2023-09-23", "Open": 2808.0},
+        {"Date": "2023-09-24", "Open": 2812.5},
+        {"Date": "2023-09-27", "Open": 2805.0},
+        {"Date": "2023-09-28", "Open": 2810.0},
+        {"Date": "2023-09-29", "Open": 2809.0},
+        {"Date": "2023-09-30", "Open": 2811.0},
+        {"Date": "2023-10-01", "Open": 2812.0},
+    ],
+    "AMZN": [
+        {"Date": "2023-09-20", "Open": 3500.0},
+        {"Date": "2023-09-21", "Open": 3550.0},
+        {"Date": "2023-09-22", "Open": 3600.0},
+        {"Date": "2023-09-23", "Open": 3580.0},
+        {"Date": "2023-09-24", "Open": 3590.5},
+        {"Date": "2023-09-27", "Open": 3575.0},
+        {"Date": "2023-09-28", "Open": 3590.0},
+        {"Date": "2023-09-29", "Open": 3595.0},
+        {"Date": "2023-09-30", "Open": 3600.0},
+        {"Date": "2023-10-01", "Open": 3610.0},
+    ],
+    "MSFT": [
+        {"Date": "2023-09-20", "Open": 300.0},
+        {"Date": "2023-09-21", "Open": 305.0},
+        {"Date": "2023-09-22", "Open": 310.0},
+        {"Date": "2023-09-23", "Open": 308.0},
+        {"Date": "2023-09-24", "Open": 309.5},
+        {"Date": "2023-09-27", "Open": 307.0},
+        {"Date": "2023-09-28", "Open": 308.5},
+        {"Date": "2023-09-29", "Open": 307.5},
+        {"Date": "2023-09-30", "Open": 309.0},
+        {"Date": "2023-10-01", "Open": 310.0},
+    ],
+    "FB": [
+        {"Date": "2023-09-20", "Open": 350.0},
+        {"Date": "2023-09-21", "Open": 355.0},
+        {"Date": "2023-09-22", "Open": 360.0},
+        {"Date": "2023-09-23", "Open": 358.0},
+        {"Date": "2023-09-24", "Open": 359.5},
+        {"Date": "2023-09-27", "Open": 357.0},
+        {"Date": "2023-09-28", "Open": 359.0},
+        {"Date": "2023-09-29", "Open": 359.5},
+        {"Date": "2023-09-30", "Open": 360.0},
+        {"Date": "2023-10-01", "Open": 361.0},
+    ],
+    "NFLX": [
+        {"Date": "2023-09-20", "Open": 600.0},
+        {"Date": "2023-09-21", "Open": 605.0},
+        {"Date": "2023-09-22", "Open": 610.0},
+        {"Date": "2023-09-23", "Open": 608.0},
+        {"Date": "2023-09-24", "Open": 609.5},
+        {"Date": "2023-09-27", "Open": 607.0},
+        {"Date": "2023-09-28", "Open": 609.0},
+        {"Date": "2023-09-29", "Open": 609.5},
+        {"Date": "2023-09-30", "Open": 610.0},
+        {"Date": "2023-10-01", "Open": 611.0},
+    ],
+    "NVDA": [
+        {"Date": "2023-09-20", "Open": 250.0},
+        {"Date": "2023-09-21", "Open": 255.0},
+        {"Date": "2023-09-22", "Open": 260.0},
+        {"Date": "2023-09-23", "Open": 258.0},
+        {"Date": "2023-09-24", "Open": 259.5},
+        {"Date": "2023-09-27", "Open": 257.0},
+        {"Date": "2023-09-28", "Open": 259.0},
+        {"Date": "2023-09-29", "Open": 259.5},
+        {"Date": "2023-09-30", "Open": 260.0},
+        {"Date": "2023-10-01", "Open": 261.0},
+    ],
+    "GOOG": [
+        {"Date": "2023-09-20", "Open": 2750.0},
+        {"Date": "2023-09-21", "Open": 2755.0},
+        {"Date": "2023-09-22", "Open": 2760.0},
+        {"Date": "2023-09-23", "Open": 2758.0},
+        {"Date": "2023-09-24", "Open": 2760.5},
+        {"Date": "2023-09-27", "Open": 2760.0},
+        {"Date": "2023-09-28", "Open": 2761.0},
+        {"Date": "2023-09-29", "Open": 2762.0},
+        {"Date": "2023-09-30", "Open": 2765.0},
+        {"Date": "2023-10-01", "Open": 2766.0},
+    ],
+    "IBM": [
+        {"Date": "2023-09-20", "Open": 140.0},
+        {"Date": "2023-09-21", "Open": 141.0},
+        {"Date": "2023-09-22", "Open": 142.0},
+        {"Date": "2023-09-23", "Open": 141.5},
+        {"Date": "2023-09-24", "Open": 142.5},
+        {"Date": "2023-09-27", "Open": 142.0},
+        {"Date": "2023-09-28", "Open": 143.0},
+        {"Date": "2023-09-29", "Open": 144.0},
+        {"Date": "2023-09-30", "Open": 143.5},
+        {"Date": "2023-10-01", "Open": 144.5},
+    ],
 }
+
 
 @app.route("/get_data", methods=["GET"])
 def get_data():
@@ -105,7 +259,6 @@ def get_data():
         result["stock_price"] = stock_prices
 
     return jsonify(result)
-
 
 if __name__ == "__main__":
     app.run(debug=True)
