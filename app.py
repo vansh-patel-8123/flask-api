@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-import yfinance as yf
 
 app = Flask(__name__)
 
@@ -30,31 +29,29 @@ def get_data():
     if ticker in total_revenues_dict:
         revenues = total_revenues_dict[ticker]
         result["revenues"] = revenues
+    else:
+        return jsonify({"error": "Ticker symbol not found"}), 404
 
-    try:
-        stock = yf.Ticker(ticker)
+    # Realistic hardcoded values for stock price and stock info (replace with real values)
+    stock_price = [
+        {"Date": "2023-09-20", "Open": 150.0},
+        {"Date": "2023-09-21", "Open": 155.0},
+        {"Date": "2023-09-22", "Open": 160.0},
+        # Add more data points as needed
+    ]
 
-        # Fetch historical stock prices for the specified period (default: 1 day)
-        history = stock.history(period="1d")
+    stock_info = {
+        "eps": 4.51,
+        "pe_ratio": 32.55,
+        "priceToBook": 10.68,
+        # Add more stock info data as needed
+    }
 
-        # Extract date and closing price values
-        price_data = history[["Open"]].reset_index()
-        result["stock_price"] = price_data.to_dict(orient="records")
+    result["stock_price"] = stock_price
+    result["stock_info"] = stock_info
 
-        # Retrieve the latest values for EPS, PE ratio, and Price-to-Book ratio
-        info = stock.info
-        eps = info.get("trailingEps", None)  # Earnings per Share
-        pe_ratio = info.get("trailingPE", None)  # Price-to-Earnings ratio
-        pb_ratio = info.get("priceToBook", None)  # Price-to-Book ratio
+    return jsonify(result)
 
-        result["eps"] = eps
-        result["pe_ratio"] = pe_ratio
-        result["priceToBook"] = pb_ratio
-
-        return jsonify(result)
-
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     app.run(debug=True)
