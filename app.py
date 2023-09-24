@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import yfinance as yf
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Dictionary mapping ticker symbols to their total revenue values (a list of 5 values)
 total_revenues_dict = {
@@ -56,5 +56,5 @@ def get_data():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
